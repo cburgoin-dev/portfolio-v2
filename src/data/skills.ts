@@ -11,14 +11,12 @@ export type Skill = {
 
 export type Category = {
     id: string;
-    label: string;
     skills: Skill[];
 };
 
 export const skillCategories: Category[] = [
     {
         id: "languages",
-        label: "Languages",
         skills: [
             { technology: "Java", level: "Advanced"},
             { technology: "Python", level: "Advanced"},
@@ -29,7 +27,6 @@ export const skillCategories: Category[] = [
     },
     {
         id: "frameworks",
-        label: "Frameworks & Mobile",
         skills: [
             { technology: "React Native", level: "Intermediate"},
             { technology: "Jetpack Compose", level: "Intermediate"},
@@ -40,7 +37,6 @@ export const skillCategories: Category[] = [
     },
     {
         id: "databases",
-        label: "Databases",
         skills: [
             { technology: "MySQL", level: "Advanced"},
             { technology: "PostgreSQL", level: "Intermediate"},
@@ -49,7 +45,6 @@ export const skillCategories: Category[] = [
     },
     {
         id: "ai",
-        label: "Applied AI",
         skills: [
             { technology: "TensorFlow", level: "Intermediate"},
             { technology: "Keras", level: "Intermediate"},
@@ -58,7 +53,6 @@ export const skillCategories: Category[] = [
     },
     {
         id: "tools",
-        label: "Tools & Technologies",
         skills: [
             { technology: "Git", level: "Advanced"},
             { technology: "GitHub", level: "Advanced"},

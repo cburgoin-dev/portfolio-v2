@@ -1,7 +1,14 @@
 import "./Navbar.css";
 import { RiMoonFill } from "react-icons/ri";
 
+import { useTranslations } from "../../translations/useTranslations";
+import { useLanguage } from '../../translations/LanguageContext';
+
 function Navbar() {
+    const tr = useTranslations();
+
+    const { language, setLanguage } = useLanguage();
+    
     return (
         <nav className ="navbar">
 
@@ -12,16 +19,16 @@ function Navbar() {
                 </a>
 
                 <ul className="navbar-links">
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">{tr.navbar.projects}</a></li>
+                    <li><a href="#experience">{tr.navbar.experience}</a></li>
+                    <li><a href="#skills">{tr.navbar.skills}</a></li>
+                    <li><a href="#about">{tr.navbar.about}</a></li>
                 </ul>
 
                 <div className="navbar-actions">
 
                     <a href="/resume.pdf" className="navbar-resume">
-                        Resume
+                        {tr.navbar.resume}
                     </a>
 
                     <button className="navbar-theme-btn">
@@ -30,12 +37,32 @@ function Navbar() {
 
                     <div className="language-toggle">
 
-                        <div className="language-indicator"></div>
+                        <div 
+                            className={`language-indicator ${
+                                language === "es" ? "right" : ""
+                            }`}
+                            onClick={() => 
+                                setLanguage(language === "en" ? "es" : "en")
+                            }
+
+                        />
 
                         <div className="language-options">
-                            <span className="active">EN</span>
-                            <span>ES</span>
+
+                            <span className={language === "en" ? "active" : ""}
+                            onClick={() => setLanguage("en")}
+                            >
+                                EN
+                            </span>
+
+                            <span className={language === "es" ? "active" : ""}
+                            onClick={() => setLanguage("es")}
+                            >
+                                ES
+                            </span>
+
                         </div>
+
                     </div>
 
                 </div>

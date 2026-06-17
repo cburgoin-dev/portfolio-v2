@@ -7,8 +7,11 @@ import {
 
 import './Hero.css';
 import RobotAvatar from '../../components/RobotAvatar/RobotAvatar';
+import { useTranslations } from "../../translations/useTranslations";
 
 function Hero() {
+    const tr = useTranslations();
+    
     return (
         <section className="hero" id="hero">
 
@@ -18,7 +21,7 @@ function Hero() {
 
                     <span className="hero-badge">
                         <span className="hero-badge-dot" aria-hidden="true" />
-                        Software Engineer
+                        {tr.hero.badge}
                     </span>
 
                     <h1 className="hero-name">
@@ -26,19 +29,23 @@ function Hero() {
                     </h1>
 
                     <p className="hero-description">
-                        Building scalable systems and solving real-world problems —
-                        one line at a time.
+                        {tr.hero.description}
                     </p>
 
                     <div className="hero-chips">
-                        <span className="hero-chip">Backend Development</span>
-                        <span className="hero-chip">Mobile Applications</span>
-                        <span className="hero-chip">Artificial Intelligence</span>
+                        {tr.hero.chips.map((chip) => (
+                            <span
+                                key={chip}
+                                className="hero-chip"
+                            >
+                                {chip}
+                            </span>
+                        ))}
                     </div>
 
                     <div className="hero-buttons">
                         <a href="#projects" className="hero-btn-primary">
-                            View projects
+                            {tr.hero.viewProjects}
                         </a>
                         <a
                             href="https://github.com/cburgoin-dev"
@@ -59,7 +66,7 @@ function Hero() {
                             className="hero-social-link"
                         >
                             <FaLinkedin size={14} />
-                            LinkedIn
+                            {tr.hero.social.linkedin}
                         </a>
 
                         <span className="hero-social-dot" aria-hidden="true">·</span>
@@ -69,14 +76,14 @@ function Hero() {
                             className="hero-social-link"
                         >
                             <FaEnvelope size={14} />
-                            Email
+                            {tr.hero.social.email}
                         </a>
 
                         <span className="hero-social-dot" aria-hidden="true">·</span>
 
                         <a href="/resume.pdf" className="hero-social-link">
                             <FaRegFileAlt size={14} />
-                            Resume
+                            {tr.hero.social.resume}
                         </a>
                     </div>
 
@@ -86,7 +93,7 @@ function Hero() {
                     <RobotAvatar />
                     <div className="hero-status-tag" aria-label="Estado: open to opportunities">
                         <span className="hero-status-dot" aria-hidden="true" />
-                        Open to opportunities
+                        {tr.hero.status}
                     </div>
                 </div>
             </div>

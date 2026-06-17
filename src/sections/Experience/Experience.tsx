@@ -4,15 +4,19 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 import { experiences } from "../../data/experience";
 
+import { useTranslations } from "../../translations/useTranslations";
+
 function Experience() {
+    const tr = useTranslations();
+
     return (
         <section className="experience" id="experience">
 
             <div className="section-container">
 
                 <SectionHeader
-                    label="Where I've grown"
-                    title="Experience"
+                    label={tr.experience.label}
+                    title={tr.experience.title}
                 />
 
                 <div className="experience-timeline">
@@ -32,21 +36,21 @@ function Experience() {
                             <article className="experience-card">
                                 <div className="experience-card-top">
                                     <h3 className="experience-card-title">
-                                        {item.organization}
+                                        {tr.experience.items[idx].organization}
                                         <span className="experience-card-role">
                                             {" — "}
-                                            {item.role}
+                                            {tr.experience.items[idx].role}
                                         </span>
                                     </h3>
                                     <span className={`experience-badge experience-badge--${item.badgeType}`}>
-                                        {item.badge}
+                                        {tr.experience.items[idx].badge}
                                     </span>
                                 </div>
 
-                                <p className="experience-date">{item.date}</p>
+                                <p className="experience-date">{tr.experience.items[idx].date}</p>
 
                                 <ul className="experience-bullets">
-                                    {item.bullets.map((bullet, i) => (
+                                    {tr.experience.items[idx].bullets.map((bullet, i) => (
                                         <li key={i}>{bullet}</li>
                                     ))}
                                 </ul>

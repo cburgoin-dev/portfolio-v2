@@ -181,6 +181,12 @@
     border-radius: 50%;
 
     background: #f8fafc;
+
+    transition: transform .25s ease;
+}
+
+.language-indicator.right::after {
+    transform: translateX(24px);
 }
 
 .language-options {
@@ -189,4 +195,6 @@
 
     font-size: .70rem;
     font-weight: 600;
+    
+    cursor: pointer;
 }

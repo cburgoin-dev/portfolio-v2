@@ -4,10 +4,17 @@ import "./Projects.css";
 
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
+import { technologies, type Technology } from "../../data/technologies";
 import { projects } from "../../data/projects";
-import { technologies } from "../../data/technologies";
+
+import { useTranslations } from "../../translations/useTranslations";
+import { useLanguage } from "../../translations/LanguageContext";
 
 function Projects() {
+    const tr = useTranslations();
+
+    const { language } = useLanguage();
+
     const [activeIdx, setActiveIdx] = useState(0);
     const [imgIdx, setImgIdx] = useState(0);
 
@@ -24,8 +31,8 @@ function Projects() {
             <div className="section-container">
 
                 <SectionHeader
-                    label="What I've built"
-                    title="Projects"
+                    label={tr.projects.label}
+                    title={tr.projects.title}
                 />
 
                 <div className="projects-layout">
@@ -40,7 +47,7 @@ function Projects() {
                                 aria-current={i === activeIdx}
                             >
                                 <span className="proj-item-dot" aria-hidden="true" />
-                                <span className="proj-item-name">{p.name}</span>
+                                <span className="proj-item-name">{tr.projects.items[i].name}</span>
                             </button>
                         ))}
                     </aside>
@@ -55,7 +62,7 @@ function Projects() {
                             {active.images.length > 0 ? (
                                 <img
                                     src={active.images[imgIdx]}
-                                    alt={`${active.title} screenshot ${imgIdx + 1}`}
+                                    alt={`${tr.projects.items[activeIdx].title} screenshot ${imgIdx + 1}`}
                                     className="proj-media-img"
                                 />
                             ) : active.architecture ? (
@@ -96,19 +103,19 @@ function Projects() {
                         <div className="proj-body">
                             <span
                                 className={`proj-status proj-status--${active.status}`}
-                                aria-label={`Status: ${active.statusLabel}`}
+                                aria-label={`Status: ${tr.projects.items[activeIdx].statusLabel}`}
                             >
                                 <span className="proj-status-dot" aria-hidden="true" />
-                                {active.statusLabel}
+                                {tr.projects.items[activeIdx].statusLabel}
                             </span>
 
-                            <h3 className="proj-name">{active.title}</h3>
+                            <h3 className="proj-name">{tr.projects.items[activeIdx].title}</h3>
 
-                            <p className="proj-desc">{active.description}</p>
+                            <p className="proj-desc">{tr.projects.items[activeIdx].description}</p>
 
                             <div className="proj-tags" aria-label="Technologies used">
                                 {active.tags.map((tag) => {
-                                    const tech = technologies[tag];
+                                    const tech = technologies[tag] as Technology;
 
                                     return (
                                         <span key={tag} className="proj-tag">
@@ -116,7 +123,7 @@ function Projects() {
                                                 {tech.icon}
                                             </span>
 
-                                            {tech.name}
+                                            {tech.labels?.[language] ?? tech.name}
                                         </span>
                                     );
                                 })}
@@ -132,7 +139,7 @@ function Projects() {
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                         <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                                     </svg>
-                                    GitHub
+                                    {tr.projects.github}
                                 </a>
 
                                 {active.demo && (

@@ -2,22 +2,24 @@ import "./About.css";
 
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
-import { about } from "../../data/about";
+import { useTranslations } from "../../translations/useTranslations";
 
 function About() {
+    const tr = useTranslations();
+
     return (
         <section className="about" id="about">
             <div className="section-container">
 
                 <SectionHeader
-                    label="How I think"
-                    title="About"
+                    label={tr.about.label}
+                    title={tr.about.title}
                 />
 
                 <div className="about-content">
 
                     <div className="about-text">
-                        {about.paragraphs.map((paragraph) => (
+                        {tr.about.paragraphs.map((paragraph) => (
                             <p key={paragraph}>
                                 {paragraph}
                             </p>
@@ -25,11 +27,11 @@ function About() {
                     </div>
 
                     <blockquote className="about-quote">
-                        "{about.quote}"
+                        "{tr.about.quote}"
                     </blockquote>
 
                     <div className="about-principles">
-                        {about.principles.map((principle) => (
+                        {tr.about.principles.map((principle) => (
                             <span
                                 key={principle}
                                 className="about-principle"

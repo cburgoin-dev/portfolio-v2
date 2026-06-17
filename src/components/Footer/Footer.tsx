@@ -2,8 +2,12 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import "./Footer.css";
 
+import { useTranslations } from "../../translations/useTranslations";
+
 function Footer() {
     const currentYear = new Date().getFullYear();
+
+    const tr = useTranslations();
 
     return(
         <footer className="footer">
@@ -11,7 +15,7 @@ function Footer() {
             <div className="section-container footer-container">
 
                 <p className="footer-bottom">
-                    © {currentYear} Cristian Burgoin • Built with React + TypeScript
+                    © {currentYear} Cristian Burgoin • {tr.footer.builtWith}
                 </p>
 
                 <div className="footer-socials">

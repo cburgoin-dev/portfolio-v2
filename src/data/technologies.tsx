@@ -34,6 +34,10 @@ import { MdLocationOn } from "react-icons/md";
 
 export type Technology = {
     name: string;
+    labels?: {
+        en: string;
+        es: string;
+    };
     icon: ReactNode;
 };
 
@@ -179,6 +183,10 @@ export const technologies = {
 
     Geolocation: {
         name: "Geolocation",
+        labels: {
+            en: "Geolocation",
+            es: "Geolocalización",
+        },
         icon: <MdLocationOn size={22} color="#ef4444"/>,
     }
 
