@@ -17,7 +17,7 @@
 
     border-radius: 50%;
 
-    background: rgba(37,99,235,0.15);
+    background: var(--robot-glow);
 
     filter: blur(80px);
 
@@ -33,7 +33,7 @@
 
     border-radius: 50%;
 
-    border: 1px solid rgba(59,130,246,.15);
+    border: 1px solid var(--robot-ring-color);
 }
 
 .robot-ring--outer {

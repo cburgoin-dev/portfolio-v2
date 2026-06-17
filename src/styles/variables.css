@@ -1,42 +1,95 @@
 :root {
 
-    /* Dark */
-
+    /* Backgrounds */
     --bg-primary: #0a0f1e;
     --bg-card: #0f1629;
 
+    /* Text */
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #475569;
 
+    /* Accent */
     --accent: #60a5fa;
     --accent-dark: #2563eb;
     --accent-light: #93c5fd;
 
+    /* Badges & Chips */
+    --badge-bg: rgba(59,130,246,0.1);
+    --badge-border: rgba(59,130,246,0.2);
+    --chip-bg: rgba(255,255,255,0.03);
+    --chip-border: rgba(100,116,139,0.3);
+    --social-dot: rgba(148,163,184,0.3);
+
+    /* Status */
+    --status-completed-color: #4ade80;
+    --status-completed-bg: rgba(34,197,94,0.1);
+    --status-completed-border: rgba(34,197,94,0.2);
+
+    /* Hero / Robot */
+    --circuit-color: rgba(59,130,246,0.25);
+    --circuit-dot-color: rgba(59,130,246,0.4);
+    --robot-island-bg: transparent;
     --robot-primary: #60a5fa;
     --robot-secondary: #1e40af;
+    --robot-ring-color: rgba(59,130,246,0.15);
+    --robot-glow: rgba(37,99,235,.15);
 
+    /* Navbar */
     --navbar-bg: rgba(10,15,30,.75);
+    --navbar-border: rgba(59,130,246,0.08);    
+    --resume-border: rgba(59,130,246,0.25);
+    --resume-hover-bg: rgba(59,130,246,0.08);
 
+    /* Language Toggle */
+    --toggle-bg: rgba(255,255,255,.08);
+    --toggle-label-opacity: 0.45;
+    --toggle-thumb: #f8fafc;
+
+    /* Buttons */
+    --btn-primary-hover: #1d4ed8;
+    --btn-secondary-border: rgba(100,116,139,0.3);
+    --btn-secondary-border-hover: rgba(100,116,139,0.6);
+
+    /* Grid & Borders */
     --grid-color: rgba(59,130,246,.025);
+    --card-border: rgba(59,130,246,0.1);
 
-    --card-border: rgba(59,130,246,.08);
+    /* Projects */
+    --sidebar-item-active-bg: rgba(37,99,235,0.1);
+    --sidebar-item-active-border: rgba(59,130,246,0.2);
+    --sidebar-item-hover-bg: rgba(255,255,255,0.03);
+    --sidebar-dot-inactive: #334155;
+    --sidebar-name-inactive: #64748b;
+    --proj-media-bg: #080e1c;
+    --proj-media-border: rgba(59,130,246,0.08);
+    --tag-bg: rgba(255,255,255,0.04);
+    --tag-border: rgba(100,116,139,0.2);
+    --proj-btn-border: rgba(100,116,139,0.25);
+    --proj-btn-border-hover: rgba(100,116,139,0.5);
 
-    /* Layout */
+    /* Experience */
+    --timeline-line: rgba(59,130,246,0.15);
+    --bullet-dash: #475569;
 
+    /* Skills */
+    --skill-card-bg: #0f1629;
+    --skill-level-intermediate: #475569;
+
+    /* Icons */
+    --icon-github: #f8fafc;
+    --icon-api: #38bdf8;
+    --icon-jwt: #facc15;
+    --icon-retrofit: #a78bfa;
+    --icon-location: #ef4444;
+
+    /* Layout (theme independent */
     --container-width: 1200px;
-
-    /* Radius */ 
-
     --radius-sm: 8px;
     --radius-md: 10px;
     --radius-lg: 12px;
-
-    /* Section spacing */
-
     --section-padding-top: 8rem;
     --section-padding-bottom: 6rem;
-
     --navbar-height: 80px;
 }
 
@@ -44,23 +97,86 @@
 
 [data-theme="light"] {
 
-    --bg-primary: #f8fafc;
-    --bg-card: #ffffff;
+    /* Backgrounds */
+    --bg-primary: #eef2f9;
+    --bg-card: #f5f8ff;
 
+    /* Text */
     --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --text-secondary: #3d5068;
     --text-muted: #64748b;
 
-    --accent: #2563eb;
-    --accent-dark: #1d4ed8;
-    --accent-light: #60a5fa;
+    /* Accent */
+    --accent: #1d4ed8;
+    --accent-dark: #1e40af;
+    --accent-light: #1d4ed8;
 
-    --robot-primary: #2563eb;
-    --robot-secondary: #60a5fa;
+    /* Badges & Chips */
+    --badge-bg: rgba(29,78,216,0.08);
+    --badge-border: rgba(29,78,216,0.2);
+    --chip-bg: rgba(29,78,216,0.05);
+    --chip-border: rgba(29,78,216,0.18);
+    --social-dot: rgba(100,116,139,0.4);
 
-    --navbar-bg: rgba(248,250,252,.75);
+    /* Status */
+    --status-completed-color: #16a34a;
+    --status-completed-bg: rgba(22,163,74,0.08);
+    --status-completed-border: rgba(22,163,74,0.2);
 
-    --grid-color: rgba(37,99,235,.05);
-    
-    --card-border: rgba(37,99,235,.12);
+    /* Hero / Robot */
+    --circuit-color: rgba(29,78,216,0.3);
+    --circuit-dot-color: rgba(29,78,216,0.5);
+    --robot-island-bg: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(29,78,216,0.06) 0%, transparent 70%);
+    --robot-primary: #1d4ed8;
+    --robot-secondary: #3b82f6;
+    --robot-ring-color: rgba(29,78,216,0.2);
+    --robot-glow: rgba(29,78,216,0.12);
+
+    /* Navbar */
+    --navbar-bg: rgba(238, 242, 249, 0.82);
+    --navbar-border: rgba(29,78,216,0.12);
+    --resume-border: rgba(29,78,216,0.3);
+    --resume-hover-bg: rgba(29,78,216,0.07);
+
+    /* Language Toggle */
+    --toggle-bg: rgba(29, 78, 216, 0.15);
+    --toggle-label-opacity: 0.62;
+    --toggle-thumb: #1d4ed8;
+
+    /* Buttons */
+    --btn-primary-hover: #1d4ed8;
+    --btn-secondary-border: rgba(29,78,216,0.2);
+    --btn-secondary-border-hover: rgba(29,78,216,0.45);
+
+    /* Grid & Borders */
+    --grid-color: rgba(29, 78, 216, 0.04);
+    --card-border: rgba(29, 78, 216, 0.12);
+
+    /* Projects */
+    --sidebar-item-active-bg: rgba(29,78,216,0.08);
+    --sidebar-item-active-border: rgba(29,78,216,0.2);
+    --sidebar-item-hover-bg: rgba(29,78,216,0.03);
+    --sidebar-dot-inactive: #94a3b8;
+    --sidebar-name-inactive: #64748b;
+    --proj-media-bg: #dde6f5;
+    --proj-media-border: rgba(29,78,216,0.08);
+    --tag-bg: rgba(29,78,216,0.04);
+    --tag-border: rgba(29,78,216,0.15);
+    --proj-btn-border: rgba(29,78,216,0.2);
+    --proj-btn-border-hover: rgba(29,78,216,0.45);
+
+    /* Experience */
+    --timeline-line: rgba(29,78,216,0.15);
+    --bullet-dash: #64748b;
+
+    /* Skills */
+    --skill-card-bg: #e8eef8;
+    --skill-level-intermediate: #4b6585;
+
+        /* Icons */
+        --icon-github: #0f172a;
+        --icon-api: #2563eb;
+        --icon-jwt: #ca8a04;
+        --icon-retrofit: #7c3aed;
+        --icon-location: #dc2626;
 }

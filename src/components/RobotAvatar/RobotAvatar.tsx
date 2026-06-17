@@ -16,28 +16,32 @@ function RobotAvatar() {
                 xmlns="http://www.w3.org/2000/svg"
             >
                 {/* Top-right circuit */}
-                <path d="M220 60 L260 60 L260 90 L290 90" stroke="rgba(59,130,246,0.25)" strokeWidth="1" />
-                <circle cx="220" cy="60" r="3" fill="rgba(59,130,246,0.4)" />
-                <circle cx="290" cy="90" r="3" fill="rgba(59,130,246,0.4)" />
+                <path d="M220 60 L260 60 L260 90 L290 90"
+                    stroke="var(--circuit-color)" strokeWidth="1" />
+                <circle cx="220" cy="60" r="3" fill="var(--circuit-dot-color)" />
+                <circle cx="290" cy="90" r="3" fill="var(--circuit-dot-color)" />
 
                 {/* Bottom-left circuit */}
-                <path d="M120 280 L80 280 L80 250 L50 250" stroke="rgba(59,130,246,0.25)" strokeWidth="1" />
-                <circle cx="120" cy="280" r="3" fill="rgba(59,130,246,0.4)" />
-                <circle cx="50" cy="250" r="3" fill="rgba(59,130,246,0.4)" />
+                <path d="M120 280 L80 280 L80 250 L50 250"
+                    stroke="var(--circuit-color)" strokeWidth="1" />
+                <circle cx="120" cy="280" r="3" fill="var(--circuit-dot-color)" />
+                <circle cx="50" cy="250" r="3" fill="var(--circuit-dot-color)" />
 
                 {/* Right side circuit */}
-                <path d="M285 170 L310 170 L310 200 L295 200" stroke="rgba(59,130,246,0.2)" strokeWidth="1" />
-                <circle cx="295" cy="200" r="2.5" fill="rgba(59,130,246,0.35)" />
+                <path d="M285 170 L310 170 L310 200 L295 200"
+                    stroke="var(--circuit-color)" strokeWidth="1" />
+                <circle cx="295" cy="200" r="2.5" fill="var(--circuit-dot-color)" />
 
                 {/* Left side circuit */}
-                <path d="M55 160 L30 160 L30 190 L45 190" stroke="rgba(59,130,246,0.2)" strokeWidth="1" />
-                <circle cx="45" cy="190" r="2.5" fill="rgba(59,130,246,0.35)" />
+                <path d="M55 160 L30 160 L30 190 L45 190"
+                    stroke="var(--circuit-color)" strokeWidth="1" />
+                <circle cx="45" cy="190" r="2.5" fill="var(--circuit-dot-color)" />
 
-                {/* Small dots scattered */}
-                <circle cx="300" cy="130" r="2" fill="rgba(59,130,246,0.3)" />
-                <circle cx="310" cy="145" r="1.5" fill="rgba(59,130,246,0.2)" />
-                <circle cx="35" cy="210" r="2" fill="rgba(59,130,246,0.3)" />
-                <circle cx="25" cy="225" r="1.5" fill="rgba(59,130,246,0.2)" />
+                {/* Small dots */}
+                <circle cx="300" cy="130" r="2" fill="var(--circuit-dot-color)" />
+                <circle cx="310" cy="145" r="1.5" fill="var(--circuit-color)" />
+                <circle cx="35" cy="210" r="2" fill="var(--circuit-dot-color)" />
+                <circle cx="25" cy="225" r="1.5" fill="var(--circuit-color)" />
             </svg>
 
             {/* Robot body */}

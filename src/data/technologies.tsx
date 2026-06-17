@@ -27,7 +27,7 @@ import LaravelLogo from "../assets/skills/laravel.svg";
 import AWSLogo from "../assets/skills/aws.svg";
 
 import { FaGithub } from "react-icons/fa";
-import { TbApi } from "react-icons/tb";
+import { TbBraces } from "react-icons/tb";
 import { TbKey } from "react-icons/tb";
 import { TbArrowsExchange } from "react-icons/tb";
 import { MdLocationOn } from "react-icons/md";
@@ -128,12 +128,12 @@ export const technologies = {
 
     GitHub: {
         name: "GitHub",
-        icon: <FaGithub size={22} color="#f8fafc" />,
+        icon: <FaGithub size={22} color="var(--icon-github)" />,
     },
 
     "REST API": {
         name: "REST API",
-        icon: <TbApi size={22} color="#38bdf8" />,
+        icon: <TbBraces size={22} color="var(--icon-api)" />,
     },
 
     Postman: {
@@ -163,12 +163,12 @@ export const technologies = {
 
     JWT: {
         name: "JWT",
-        icon: <TbKey size={22} color="#facc15"/>,
+        icon: <TbKey size={22} color="var(--icon-jwt)" />,
     },
 
     Retrofit: {
         name: "Retrofit",
-        icon: <TbArrowsExchange size={22} color="#a78bfa" />,
+        icon: <TbArrowsExchange size={22} color="var(--icon-retrofit)" />,
     },
 
     Laravel: {
@@ -187,7 +187,7 @@ export const technologies = {
             en: "Geolocation",
             es: "Geolocalización",
         },
-        icon: <MdLocationOn size={22} color="#ef4444"/>,
+        icon: <MdLocationOn size={22} color="var(--icon-location)" />,
     }
 
 } as const;
