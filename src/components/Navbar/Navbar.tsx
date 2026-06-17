@@ -1,10 +1,13 @@
 import "./Navbar.css";
-import { RiMoonFill } from "react-icons/ri";
+import { RiMoonFill, RiSunFill } from "react-icons/ri";
 
+import { useTheme } from "../../theme/ThemeContext";
 import { useTranslations } from "../../translations/useTranslations";
 import { useLanguage } from '../../translations/LanguageContext';
 
 function Navbar() {
+    const { theme, setTheme } = useTheme();
+
     const tr = useTranslations();
 
     const { language, setLanguage } = useLanguage();
@@ -31,8 +34,22 @@ function Navbar() {
                         {tr.navbar.resume}
                     </a>
 
-                    <button className="navbar-theme-btn">
-                        <RiMoonFill size={22}/>
+                    <button 
+                        className="navbar-theme-btn"
+                        onClick={() =>
+                            setTheme(
+                                theme === "dark"
+                                    ? "light"
+                                    : "dark"
+                            )
+                        }
+                        aria-label="Toggle theme"
+                    >
+                        {
+                            theme === "dark"
+                                ? <RiSunFill size={22} />
+                                : <RiMoonFill size={22} />
+                        }
                     </button>
 
                     <div className="language-toggle">

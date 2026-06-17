@@ -1,6 +1,6 @@
 :root {
 
-    /* Colors */
+    /* Dark */
 
     --bg-primary: #0a0f1e;
     --bg-card: #0f1629;
@@ -15,6 +15,12 @@
 
     --robot-primary: #60a5fa;
     --robot-secondary: #1e40af;
+
+    --navbar-bg: rgba(10,15,30,.75);
+
+    --grid-color: rgba(59,130,246,.025);
+
+    --card-border: rgba(59,130,246,.08);
 
     /* Layout */
 
@@ -32,4 +38,29 @@
     --section-padding-bottom: 6rem;
 
     --navbar-height: 80px;
+}
+
+/* Light */
+
+[data-theme="light"] {
+
+    --bg-primary: #f8fafc;
+    --bg-card: #ffffff;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    --accent: #2563eb;
+    --accent-dark: #1d4ed8;
+    --accent-light: #60a5fa;
+
+    --robot-primary: #2563eb;
+    --robot-secondary: #60a5fa;
+
+    --navbar-bg: rgba(248,250,252,.75);
+
+    --grid-color: rgba(37,99,235,.05);
+    
+    --card-border: rgba(37,99,235,.12);
 }

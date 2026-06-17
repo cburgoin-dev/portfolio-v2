@@ -24,18 +24,18 @@ type Props = {
 };
 
 export function LanguageProvider({ children }: Props) {
-    const [language, setLanguageState] = useState<Language>("en");
-
-    useEffect(() => {
+    const [language, setLanguageState] = useState<Language>(() => {
         const saved = localStorage.getItem(STORAGE_KEY);
 
         if (
             saved === "en" ||
             saved === "es"
         ) {
-            setLanguageState(saved);
+            return saved;
         }
-    }, []);
+
+        return "en";
+    });
 
     const setLanguage = (lang: Language) => {
         setLanguageState(lang);

@@ -9,7 +9,7 @@
 
     z-index: 1000;
 
-    background: rgba(10,15,30,.75);
+    background: var(--navbar-bg);
 
     backdrop-filter: blur(12px);
 
@@ -124,13 +124,25 @@
 
     margin-right: 2rem;
 
-    transition: .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: color .2s, transform .2s;
 }
 
 .navbar-theme-btn:hover {
     color: var(--text-primary);
 
     transform: translateY(-1px);
+}
+
+.navbar-theme-btn svg {
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.navbar-theme-btn:hover svg {
+    transform: rotate(15deg);
 }
 
 .language-toggle {

@@ -1,13 +1,28 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio-v2</title>
-  </head>
-  <body>
+    <title>Cristian Burgoin | Software Enginer</title>
+    <script>
+        const theme = localStorage.getItem("portfolio-theme") ?? "dark";
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            theme
+        );
+
+        document.documentElement.classList.add(
+            "preload"
+        );
+    </script>
+</head>
+
+<body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+</body>
+
 </html>
