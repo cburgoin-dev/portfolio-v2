@@ -1,0 +1,58 @@
+.about {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+}
+
+.about-content {
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-text p {
+    color: var(--text-secondary);
+
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.about-quote {
+    padding-left: 1.25rem;
+
+    border-left: 3px solid rgba(59,130,246,.3);
+
+    color: var(--text-primary);
+
+    font-size: 0.98rem;
+    font-style: italic;
+    font-weight: 500;
+
+    line-height: 1.6;
+}
+
+.about-principles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem;
+}
+
+.about-principle {
+    padding: .45rem .9rem;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.03);
+    border: 1px solid rgba(100,116,139,.25);
+
+    color: var(--text-secondary);
+
+    font-size: .8rem;
+}

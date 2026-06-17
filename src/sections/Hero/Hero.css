@@ -1,0 +1,268 @@
+.hero {
+    position: relative;
+    padding-top: var(--navbar-height);
+}
+
+.hero-container {
+    min-height: calc(100vh - var(--navbar-height));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 6rem;
+}
+
+/* Grid background */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(59, 130, 246, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, .035) 1px, transparent 1px);
+
+    background-size: 48px 48px;
+
+    pointer-events: none;
+}
+
+.hero-left,
+.hero-right {
+    position: relative;
+    z-index: 1;
+}
+
+/* Left column */
+
+.hero-left {
+    max-width: 520px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+
+    width: fit-content;
+
+    margin-bottom: 1.5rem;
+    padding: .35rem .9rem;
+
+    border-radius: 999px;
+
+    background: rgba(59,130,246,.1);
+    border: 1px solid rgba(59,130,246,.2);
+
+    color: var(--accent-light);
+
+    font-size: .82rem;
+    font-weight: 500;
+}
+
+.hero-badge-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    animation: pulse 2s infinite;
+}
+
+.hero-name {
+    margin-bottom: 1.2rem;
+
+    font-size: clamp(3.2rem, 5.5vw, 5rem);
+    font-weight: 800;
+
+    line-height: 1.05;
+    letter-spacing: -2.5px;
+
+    color: var(--text-primary);
+}
+
+.hero-name-accent {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 420px;
+
+    margin-bottom: 1.75rem;
+
+    color: var(--text-secondary);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    margin-bottom: 2rem;
+}
+
+.hero-chip {
+    padding: .35rem .8rem;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255,.03);
+    border: 1px solid rgba(100, 116, 139,.3);
+
+    color: var(--text-secondary);
+
+    font-size: .82rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: .75rem;
+
+    margin-bottom: 1.75rem;
+}
+
+.hero-btn-primary,
+.hero-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+
+    padding: .75rem 1.3rem;
+
+    border-radius: var(--radius-md);
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.hero-btn-primary {
+    background: var(--accent-dark);
+    color: white;
+
+    font-size: .9rem;
+    font-weight: 600;
+
+    transition: background .2s, transform .2s, box-shadow .2s;
+}
+
+.hero-btn-primary:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+
+    box-shadow: 0 8px 20px rgba(37,99,235,.25);
+}
+
+.hero-btn-secondary {
+    border: 1px solid rgba(100,116,139,.3);
+
+    color: var(--text-secondary);
+
+    font-size: .9rem;
+}
+
+.hero-btn-secondary:hover {
+    color: var(--text-primary);
+
+    border-color: rgba(100,116,139,.6);
+
+    transform: translateY(-1px);
+}
+
+.hero-social {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.hero-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+
+    color: var(--text-secondary);
+
+    font-size: .82rem;
+
+    text-decoration: none;
+
+    opacity: .6;
+
+    transition: .2s;
+}
+
+.hero-social-link:hover {
+    opacity: 1;
+}
+
+.hero-social-dot {
+    color: rgba(148,163,184,.3);
+}
+
+/* Right column */
+
+.hero-right {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+.hero-status-tag {
+    position: absolute;
+
+    right: -14px;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+
+    padding: .45rem .85rem;
+
+    border-radius: var(--radius-sm);
+
+    background: var(--bg-card);
+    border: 1px solid rgba(59,130,246,.2);
+
+    color: var(--accent-light);
+
+    font-size: .75rem;
+
+    white-space: nowrap;
+}
+
+.hero-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        opacity: 1; 
+    }
+
+    50% {
+        opacity: .4;
+    }
+}

@@ -1,0 +1,202 @@
+/* Section */
+
+.experience {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+}
+
+/* Timeline */
+
+.experience-timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Item */
+
+.experience-item {
+    display: grid;
+
+    grid-template-columns: 36px minmax(0, 1fr);
+
+    gap: 1rem;
+}
+
+/* Rail */
+
+.experience-rail {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+}
+
+.experience-dot {
+    position: relative;
+    z-index: 1;
+
+    width: 10px;
+    height: 10px;
+
+    margin-top: 0.45rem;
+
+    border-radius: 50%;
+
+    background: var(--bg-primary);
+
+    border: 2px solid var(--accent);
+}
+
+.experience-rail-line {
+    position: absolute;
+
+    top: 1rem;
+    bottom: -1.5rem;
+    left: 50%;
+
+    width: 1px;
+
+    transform: translateX(-50%);
+
+    background: rgba(59,130,246,0.15);
+}
+
+/* Card */
+
+.experience-card {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1.75rem;
+
+    border: 1px solid rgba(59,130,246,0.1);
+    border-radius: var(--radius-lg);
+
+    background: var(--bg-card);
+
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.experience-item:last-child .experience-card {
+    margin-bottom: 0;
+}
+
+/* Header */
+
+.experience-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 1rem;
+
+    margin-bottom: 0.4rem;
+}
+
+.experience-card-title {
+    color: var(--text-primary);
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    letter-spacing: -0.3px;
+}
+
+.experience-card-role {
+    color: var(--text-secondary);
+
+    font-weight: 600;
+}
+
+/* Badge */
+
+.experience-badge {
+    flex-shrink: 0;
+
+    padding: 5px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+}
+
+.experience-badge--current {
+    color: #4ade80;
+    
+    background: rgba(34,197,94,0.1);
+
+    border: 1px solid rgba(34,197,94,0.2);
+}
+
+.experience-badge--degree {
+    color: var(--accent-light);
+
+    background: rgba(59,130,246,0.1);
+
+    border: 1px solid rgba(59,130,246,0.2);
+}
+
+.experience-badge--foundation {
+    color: var(--text-secondary);
+
+    background: rgba(100,116,139,0.1);
+
+    border: 1px solid rgba(100,116,139,0.2);
+}
+
+/* Content */
+
+.experience-date {
+    margin-bottom: 1rem;
+
+    color: var(--accent);
+
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.experience-bullets {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.6rem;
+    list-style: none;
+}
+
+.experience-bullets li {
+    position: relative;
+
+    padding-left: 1rem;
+
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+}
+
+.experience-bullets li::before {
+    content: "—";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #475569;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .experience-card-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-badge {
+        align-self: flex-start;
+    }
+}

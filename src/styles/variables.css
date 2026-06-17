@@ -1,0 +1,35 @@
+:root {
+
+    /* Colors */
+
+    --bg-primary: #0a0f1e;
+    --bg-card: #0f1629;
+
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #475569;
+
+    --accent: #60a5fa;
+    --accent-dark: #2563eb;
+    --accent-light: #93c5fd;
+
+    --robot-primary: #60a5fa;
+    --robot-secondary: #1e40af;
+
+    /* Layout */
+
+    --container-width: 1200px;
+
+    /* Radius */ 
+
+    --radius-sm: 8px;
+    --radius-md: 10px;
+    --radius-lg: 12px;
+
+    /* Section spacing */
+
+    --section-padding-top: 8rem;
+    --section-padding-bottom: 6rem;
+
+    --navbar-height: 80px;
+}
