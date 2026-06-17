@@ -37,6 +37,10 @@
     transition: opacity .2s;
 }
 
+.navbar-logo-accent {
+    color: var(--accent);
+}
+
 .navbar-logo:hover {
     opacity: .8;
 }

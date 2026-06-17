@@ -94,10 +94,10 @@ const es = {
         title: "Habilidades",
         categories: {
             languages: "Lenguajes",
-            frameworks: "Frameworks y Móvil",
+            frameworks: "Frameworks y Plataformas",
             databases: "Bases de datos",
             ai: "IA aplicada",
-            tools: "Herramientas y tecnologías",
+            tools: "Herramientas y prácticas",
         },
         levels: {
             advanced: "Avanzado",

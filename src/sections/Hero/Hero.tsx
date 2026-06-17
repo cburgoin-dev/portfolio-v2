@@ -8,9 +8,15 @@ import {
 import './Hero.css';
 import RobotAvatar from '../../components/RobotAvatar/RobotAvatar';
 import { useTranslations } from "../../translations/useTranslations";
+import { useLanguage } from "../../translations/LanguageContext";
+import { resumes } from "../../utils/resume";
 
 function Hero() {
     const tr = useTranslations();
+
+    const { language } = useLanguage();
+
+    const resumeFile = resumes[language];
     
     return (
         <section className="hero" id="hero">
@@ -81,7 +87,12 @@ function Hero() {
 
                         <span className="hero-social-dot" aria-hidden="true">·</span>
 
-                        <a href="/resume.pdf" className="hero-social-link">
+                        <a 
+                            href={resumeFile}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hero-social-link"
+                        >
                             <FaRegFileAlt size={14} />
                             {tr.hero.social.resume}
                         </a>

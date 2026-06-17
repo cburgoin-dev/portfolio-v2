@@ -94,10 +94,10 @@ const en = {
         title: "Skills",
         categories: {
             languages: "Languages",
-            frameworks: "Frameworks & Mobile",
+            frameworks: "Frameworks & Platforms",
             databases: "Databases",
             ai: "Applied AI",
-            tools: "Tools & Technologies",
+            tools: "Tools & Practices",
         },
         levels: {
             advanced: "Advanced",

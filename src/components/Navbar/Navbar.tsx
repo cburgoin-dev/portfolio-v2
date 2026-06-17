@@ -4,6 +4,7 @@ import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import { useTheme } from "../../theme/ThemeContext";
 import { useTranslations } from "../../translations/useTranslations";
 import { useLanguage } from '../../translations/LanguageContext';
+import { resumes } from "../../utils/resume";
 
 function Navbar() {
     const { theme, setTheme } = useTheme();
@@ -11,6 +12,8 @@ function Navbar() {
     const tr = useTranslations();
 
     const { language, setLanguage } = useLanguage();
+
+    const resumeFile = resumes[language];
     
     return (
         <nav className ="navbar">
@@ -18,7 +21,10 @@ function Navbar() {
             <div className="section-container navbar-container">
 
                 <a href="#hero" className="navbar-logo">
-                    Cristian Burgoin
+                    Cristian{" "}
+                    <span className="navbar-logo-accent">
+                        Burgoin
+                    </span>
                 </a>
 
                 <ul className="navbar-links">
@@ -30,7 +36,12 @@ function Navbar() {
 
                 <div className="navbar-actions">
 
-                    <a href="/resume.pdf" className="navbar-resume">
+                    <a 
+                        href={resumeFile}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="navbar-resume"
+                    >
                         {tr.navbar.resume}
                     </a>
 
