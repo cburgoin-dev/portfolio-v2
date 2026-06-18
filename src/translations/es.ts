@@ -28,6 +28,7 @@ const es = {
         label: "Lo que he construido",
         title: "Proyectos",
         github: "GitHub",
+        androidApk: "APK Android",
         items: [
             {
                 id: 1,

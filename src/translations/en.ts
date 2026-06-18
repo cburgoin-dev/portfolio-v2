@@ -28,6 +28,7 @@ const en = {
         label: "What I've built",
         title: "Projects",
         github: "GitHub",
+        androidApk: "Android APK",
         items: [
             {
                 id: 1,

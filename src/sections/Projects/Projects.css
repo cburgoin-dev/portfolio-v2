@@ -100,8 +100,7 @@
 /* Detail panel — two columns: media | body */
 
 .proj-detail {
-    display: grid;
-    grid-template-columns: 420px minmax(0, 1fr);
+    display: flex;
 
     width: 100%;
 
@@ -124,11 +123,42 @@
 
     min-height: 420px;
 
+    padding: 2rem;
+
     overflow: hidden;
 
     background: var(--proj-media-bg);
 
     border-right: 1px solid var(--proj-media-border);
+}
+
+.proj-media--phone {
+    width: 380px;
+
+    flex-shrink: 0;
+
+    padding: 1.5rem 1rem;
+}
+
+.proj-media--phone .proj-media-img {
+    max-height: 380px;
+
+    width: auto;
+    height: auto;
+
+    margin-bottom: 12px;
+}
+
+.proj-media--landscape {
+    width: 420px;
+
+    flex-shrink: 0;
+}
+
+.proj-media--diagram {
+    width: 420px;
+
+    flex-shrink: 0;
 }
 
 .proj-media-grid {
@@ -148,10 +178,21 @@
     position: relative;
     z-index: 1;
 
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 360px;
 
-    object-fit: cover;
+    width: auto;
+    height: auto;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--screenshot-border);
+
+    box-shadow: 
+        0 12px 28px rgba(0,0,0,0.08),
+        0 2px 6px rgba(0,0,0,0.04);
+
+    object-fit: contain;
 }
 
 .proj-media-placeholder {
@@ -163,6 +204,42 @@
     opacity: 0.18;
 
     font-size: 4rem;
+}
+
+.proj-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 3;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-secondary);
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    padding: 0.5rem;
+
+    transition: color 0.15s;
+}
+
+.proj-arrow:hover {
+    color: var(--text-primary);
+}
+
+.proj-arrow--prev {
+    left: 12px;
+}
+
+.proj-arrow--next {
+    right: 12px;
 }
 
 /* Architecture diagram (used when a project has no screenshots) */
@@ -216,27 +293,27 @@
     position: absolute;
 
     left: 50%;
-    bottom: 16px;
+    bottom: 10px;
 
-    z-index: 2;
+    z-index: 5;
 
     display: flex;
 
-    gap: 5px;
+    gap: 8px;
 
     transform: translateX(-50%);
 }
 
 .proj-dot {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
 
     padding: 0;
 
     border: none;
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.15);
+    background: var(--proj-dot);
 
     cursor: pointer;
 
@@ -249,6 +326,10 @@
 
 /* Body */
 .proj-body {
+    flex: 1;
+
+    min-width: 0;
+
     display: flex;
     flex-direction: column;
 
@@ -455,5 +536,9 @@
 
     .proj-media {
         min-height: 320px;
+    }
+
+    .proj-media-img {
+        max-height: 280px;
     }
 }

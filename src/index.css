@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+    transition:
+        background-color .2s ease,
+        border-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease;
+}
+
 html {
     scroll-behavior: smooth;
 }

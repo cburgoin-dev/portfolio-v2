@@ -20,6 +20,22 @@ function Projects() {
 
     const active = projects[activeIdx];
 
+    function prevImg() {
+        setImgIdx(i => 
+            i === 0
+                ? active.images.length - 1
+                : i - 1
+        );
+    }
+
+    function nextImg() {
+        setImgIdx(i => 
+            i === active.images.length - 1
+                ? 0
+                : i + 1
+        );
+    }
+
     function handleSelect(idx: number) {
         setActiveIdx(idx);
         setImgIdx(0);
@@ -56,15 +72,37 @@ function Projects() {
                     <div className="proj-detail">
 
                         {/* Media column */}
-                        <div className="proj-media">
+                        <div className={`proj-media proj-media--${active.previewLayout}`}>
                             <div className="proj-media-grid" aria-hidden="true" />
 
                             {active.images.length > 0 ? (
-                                <img
-                                    src={active.images[imgIdx]}
-                                    alt={`${tr.projects.items[activeIdx].title} screenshot ${imgIdx + 1}`}
-                                    className="proj-media-img"
-                                />
+                                <>
+                                    <img
+                                        src={active.images[imgIdx]}
+                                        alt={`${tr.projects.items[activeIdx].title} screenshot ${imgIdx + 1}`}
+                                        className="proj-media-img"
+                                    />
+
+                                    {active.images.length > 1 && (
+                                        <>
+                                            <button
+                                                className="proj-arrow proj-arrow--prev"
+                                                onClick={prevImg}
+                                                aria-label="Previous screenshot"
+                                            >
+                                                ‹
+                                            </button>
+
+                                            <button
+                                            className="proj-arrow proj-arrow--next"
+                                            onClick={nextImg}
+                                            aria-label="Next screenshot"
+                                            >
+                                                ›
+                                            </button>
+                                        </>
+                                    )}
+                                </>
                             ) : active.architecture ? (
                                 <div className="proj-architecture" aria-label="System architecture diagram">
                                     {active.architecture.map((layer, i) => (
@@ -142,12 +180,13 @@ function Projects() {
                                     {tr.projects.github}
                                 </a>
 
-                                {active.demo && (
+                                {active.actions?.map((action) => (
                                     <a
-                                        href={active.demo.url}
+                                        key={action.url}
+                                        href={action.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="proj-btn proj-btn--primary"
+                                        className={`proj-btn proj-btn--${action.variant}`}
                                     >
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -155,9 +194,9 @@ function Projects() {
                                             <line x1="10" y1="14" x2="21" y2="3" />
                                         </svg>
 
-                                        {active.demo.label}
+                                        {tr.projects[action.labelKey]}
                                     </a>
-                                )}
+                                ))}
                             </div>
                         </div>
                     </div>

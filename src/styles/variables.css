@@ -62,7 +62,9 @@
     --sidebar-dot-inactive: #334155;
     --sidebar-name-inactive: #64748b;
     --proj-media-bg: #080e1c;
+    --proj-dot: rgba(255,255,255,0.18);
     --proj-media-border: rgba(59,130,246,0.08);
+    --screenshot-border: rgba(255,255,255,0.08);
     --tag-bg: rgba(255,255,255,0.04);
     --tag-border: rgba(100,116,139,0.2);
     --proj-btn-border: rgba(100,116,139,0.25);
@@ -159,7 +161,9 @@
     --sidebar-dot-inactive: #94a3b8;
     --sidebar-name-inactive: #64748b;
     --proj-media-bg: #dde6f5;
+    --proj-dot: rgba(100,116,139,0.35);
     --proj-media-border: rgba(29,78,216,0.08);
+    --screenshot-border: rgba(15, 23, 42, 0.18);
     --tag-bg: rgba(29,78,216,0.04);
     --tag-border: rgba(29,78,216,0.15);
     --proj-btn-border: rgba(29,78,216,0.2);
