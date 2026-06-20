@@ -21,6 +21,20 @@ Built with React, TypeScript, and Vite, the portfolio includes multilingual supp
 
 ---
 
+## Screenshots
+
+The screenshots below showcase the main sections of the portfolio.
+
+| Hero | Projects | Experience |
+|---|---|---|
+| ![](screenshots/portfolio-01.png) | ![](screenshots/portfolio-02.png) | ![](screenshots/portfolio-03.png) |
+
+| Skills | About |
+|---|---|
+| ![](screenshots/portfolio-04.png) | ![](screenshots/portfolio-05.png) |
+
+---
+
 ## Featured Projects
 
 ### 🌊 Turismo La Paz
@@ -62,12 +76,20 @@ Technologies:
 
 ## Tech Stack
 
+### Frontend
+
 - React
 - TypeScript
 - Vite
 - CSS
+
+### State & Architecture
+
 - React Context API
 - Local Storage
+
+### Deployment
+
 - GitHub Pages
 
 ---
@@ -97,4 +119,4 @@ npm run dev
 
 This repository serves as the central hub for presenting my work as a software engineering student and developer.
 
-It showcases projects involving mobile development, backend architecture, and applied AI while emphasizing clean design and accessibility.
+It showcases projects involving mobile development, backend architecture, and applied AI while emphasizing clean design, accessibility, and maintainability.
