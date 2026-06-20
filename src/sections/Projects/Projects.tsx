@@ -10,6 +10,8 @@ import { projects } from "../../data/projects";
 import { useTranslations } from "../../translations/useTranslations";
 import { useLanguage } from "../../translations/LanguageContext";
 
+import { Icons } from "../../utils/icons";
+
 function Projects() {
     const tr = useTranslations();
 
@@ -20,17 +22,60 @@ function Projects() {
 
     const active = projects[activeIdx];
 
+    const previewCount =
+        active.previewLayout === "api"
+            ? active.apiExamples?.length ?? 0
+            : active.images.length;
+
+    const actionConfig = {
+        apk: {
+            icon: Icons.apk,
+            label: tr.projects.actions.apk,
+        },
+        demo: {
+            icon: Icons.demo,
+            label: tr.projects.actions.demo,
+        },
+        website: {
+            icon: Icons.website,
+            label: tr.projects.actions.website,
+        },
+        docs: {
+            icon: Icons.docs,
+            label: tr.projects.actions.docs,
+        },
+    } as const;
+
+    const shouldOpenExternally = {
+        apk: false,
+        demo: true,
+        website: true,
+        docs: true,
+    } as const;
+    
+    const example = active.apiExamples?.[imgIdx];
+
+    function getHttpMethod(endpoint?: string) {
+        if (!endpoint) return null;
+
+        const method = endpoint.split(" ")[0];
+
+        return ["GET", "POST", "PUT", "PATCH", "DELETE"].includes(method)
+            ? method
+            : null;
+    }
+
     function prevImg() {
         setImgIdx(i => 
             i === 0
-                ? active.images.length - 1
+                ? previewCount - 1
                 : i - 1
         );
     }
 
     function nextImg() {
         setImgIdx(i => 
-            i === active.images.length - 1
+            i === previewCount - 1
                 ? 0
                 : i + 1
         );
@@ -83,7 +128,7 @@ function Projects() {
                                         className="proj-media-img"
                                     />
 
-                                    {active.images.length > 1 && (
+                                    {previewCount > 1 && (
                                         <>
                                             <button
                                                 className="proj-arrow proj-arrow--prev"
@@ -97,6 +142,93 @@ function Projects() {
                                             className="proj-arrow proj-arrow--next"
                                             onClick={nextImg}
                                             aria-label="Next screenshot"
+                                            >
+                                                ›
+                                            </button>
+                                        </>
+                                    )}
+                                </>
+
+                            ) : active.previewLayout === "api" && active.apiExamples ? (
+                                <> 
+                                    <div className="proj-api">
+
+                                        {example?.overview ? (
+                                            <>
+                                                <span className="proj-api-overview-label">
+                                                    {example.subtitle}
+                                                </span>
+
+                                                <div className="proj-api-overview-title">
+                                                    {example.title}
+                                                </div>
+
+                                                <ul className="proj-api-overview"> 
+                                                    {example?.overview.map((item) => (
+                                                        <li key={item}>
+                                                            {item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <div className="proj-api-section">
+                                                    <span className="proj-api-label">
+                                                        Request
+                                                    </span>
+
+                                                    <div className="proj-api-code">
+                                                        {example?.request?.map((line, index) => {
+                                                            const method = getHttpMethod(line);
+
+                                                            if (method) {
+                                                                const endpoint = line.substring(method.length);
+
+                                                                return (
+                                                                    <div key={index}>
+                                                                        <span className={`proj-http proj-http--${method.toLowerCase()}`}>
+                                                                            {method}
+                                                                        </span>
+
+                                                                        {endpoint}
+                                                                    </div>
+                                                                );
+                                                            }
+
+                                                            return (
+                                                                <div key={index}>
+                                                                    {line}
+                                                                </div>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                </div>
+
+                                                <div className="proj-api-section">
+                                                    <span className="proj-api-status">
+                                                        {example?.responseStatus}
+                                                    </span>
+
+                                                    <pre className="proj-api-code">
+                                                        {example?.response?.join("\n")}
+                                                    </pre>
+                                                </div>
+                                            </>
+                                        )}
+
+                                    </div>
+
+                                    {previewCount > 1 && (
+                                        <>
+                                            <button className="proj-arrow proj-arrow--prev"
+                                            onClick={prevImg}
+                                            >
+                                                ‹
+                                            </button>
+
+                                            <button className="proj-arrow proj-arrow--next"
+                                            onClick={nextImg}
                                             >
                                                 ›
                                             </button>
@@ -121,9 +253,9 @@ function Projects() {
                             )}
 
                             {/* Image dots — only when there are images */}
-                            {active.images.length > 1 && (
+                            {previewCount > 1 && (
                                 <div className="proj-dots" role="tablist" aria-label="Project screenshots">
-                                    {active.images.map((_, i) => (
+                                    {Array.from({ length: previewCount }).map((_, i) => (
                                         <button
                                             key={i}
                                             role="tab"
@@ -174,29 +306,28 @@ function Projects() {
                                     rel="noopener noreferrer"
                                     className="proj-btn proj-btn--secondary"
                                 >
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                                    </svg>
+                                    <Icons.github size={15} />
                                     {tr.projects.github}
                                 </a>
 
-                                {active.actions?.map((action) => (
-                                    <a
-                                        key={action.url}
-                                        href={action.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`proj-btn proj-btn--${action.variant}`}
-                                    >
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                            <polyline points="15 3 21 3 21 9" />
-                                            <line x1="10" y1="14" x2="21" y2="3" />
-                                        </svg>
+                                {active.actions?.map((action) => {
+                                    const config = actionConfig[action.type];
+                                    const Icon = config.icon;
+                                    const openInNewTab = shouldOpenExternally[action.type];
 
-                                        {tr.projects[action.labelKey]}
-                                    </a>
-                                ))}
+                                    return (
+                                        <a
+                                            key={action.url}
+                                            href={action.url}
+                                            target={openInNewTab ? "_blank" : undefined}
+                                            rel={openInNewTab ? "noopener noreferrer" : undefined}
+                                            className={`proj-btn proj-btn--${action.variant ?? "primary"}`}
+                                        >
+                                            <Icon size={15} />
+                                            {config.label}
+                                        </a>
+                                    )
+                                })}
                             </div>
                         </div>
                     </div>

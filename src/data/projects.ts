@@ -1,4 +1,4 @@
- import type { TechnologyKey } from "./technologies";
+import type { TechnologyKey } from "./technologies";
 
 import turismo01 from "../assets/projects/turismo-la-paz/turismo-la-paz-01.jpeg";
 import turismo02 from "../assets/projects/turismo-la-paz/turismo-la-paz-02.jpeg";
@@ -7,24 +7,49 @@ import turismo04 from "../assets/projects/turismo-la-paz/turismo-la-paz-04.jpeg"
 import turismo05 from "../assets/projects/turismo-la-paz/turismo-la-paz-05.jpeg";
 import turismo06 from "../assets/projects/turismo-la-paz/turismo-la-paz-06.jpeg";
 
-type ActionLabelKey = "androidApk";
+import lostfound01 from "../assets/projects/lost-found/lost-found-01.jpeg";
+import lostfound02 from "../assets/projects/lost-found/lost-found-02.jpeg";
+import lostfound03 from "../assets/projects/lost-found/lost-found-03.jpeg";
+import lostfound04 from "../assets/projects/lost-found/lost-found-04.jpeg";
+import lostfound05 from "../assets/projects/lost-found/lost-found-05.jpeg";
+import lostfound06 from "../assets/projects/lost-found/lost-found-06.jpeg";
+
+export type ProjectActionType =
+    | "apk"
+    | "demo"
+    | "website"
+    | "docs";
 
 export type Project = {
     id: number;
     status: "live" | "dev";
-    previewLayout: "phone" | "landscape" | "diagram";
+    previewLayout: 
+    | "phone" 
+    | "landscape" 
+    | "diagram"
+    | "api";
+    apiExamples?: ApiExample[];
     tags: TechnologyKey[];
     github: string;
     actions?: {
-        labelKey: ActionLabelKey;
+        type: ProjectActionType;
         url: string;
-        variant: "primary";
+        variant?: "primary" | "secondary";
     }[];
     images: string[];
     icon: string;
     /** Optional architecture flow shown in the media column when there are no images */
     architecture?: string[];
 };
+
+export type ApiExample = {
+    title: string;
+    subtitle?: string;
+    request?: string[];
+    responseStatus?: string;
+    response?: string[];
+    overview?: string[];
+}
 
 export const projects: Project[] = [
     {
@@ -35,7 +60,7 @@ export const projects: Project[] = [
         github: "https://github.com/cburgoin-dev/turismo-la-paz",
         actions: [
             {
-                labelKey: "androidApk",
+                type: "apk",
                 url: "https://github.com/cburgoin-dev/turismo-la-paz/releases/download/v1.0.0/TurismoLaPaz-v1.0.0.apk",
                 variant: "primary"
             }
@@ -55,20 +80,124 @@ export const projects: Project[] = [
         status: "live",
         previewLayout: "phone",
         tags: ["Kotlin", "Jetpack Compose", "Retrofit", "Laravel", "AWS S3"],
-        github: "https://github.com/cburgoin-dev",
-        actions: [],
-        images: [],
+        github: "https://github.com/cburgoin-dev/lost-and-found",
+        actions: [
+            {
+                type: "apk",
+                url: "https://github.com/cburgoin-dev/lost-and-found/releases/download/v1.1/LostFoundApp-v1.1.apk",
+                variant: "primary"
+            }
+        ],
+        images: [
+            lostfound01,
+            lostfound02,
+            lostfound03,
+            lostfound04,
+            lostfound05,
+            lostfound06,
+        ],
         icon: "🔍",
     },
     {
         id: 3,
         status: "live",
-        previewLayout: "diagram",
+        previewLayout: "api",
         tags: ["Java", "MySQL", "REST API", "JWT"],
-        github: "https://github.com/cburgoin-dev",
-        actions: [],
+        github: "https://github.com/cburgoin-dev/hotel-reservation-api",
+        actions: [
+            {
+                type: "docs",
+                url: "https://github.com/cburgoin-dev/hotel-reservation-api#readme",
+                variant: "primary"
+            }
+        ],
         images: [],
         icon: "🏨",
-        architecture: ["Controller", "Service", "DAO", "MySQL"],
+        apiExamples: [
+            {
+                title: "Hotel Reservation API",
+                subtitle: "OVERVIEW",
+                overview: [
+                    "✓ JWT Authentication",
+                    "✓ BCrypt Password Hashing",
+                    "✓ Role-Based Access Control",
+                    "✓ Booking Validation",
+                    "✓ Business Rules Enforcement"
+                ]
+            },
+            {
+                title: "Authentication",
+                request: [
+                    "POST /api/auth/login",
+                    "",
+                    "{",
+                    '  "email": "admin@hotel.com",',
+                    '  "password": "••••••"',
+                    "}"
+                ],
+                responseStatus: "200 OK",
+                response: [
+                    "{",
+                    '  "token": "eyJhbGciOi..."',
+                    '  "role": "ADMIN"',
+                    "}"
+                ]
+            },
+            {
+                title: "Booking Created",
+                request: [
+                    "POST /api/bookings",
+                    "",
+                    "{",
+                    '  "guestId": 12,',
+                    '  "roomId": 5,',
+                    '  "checkIn": "2026-07-10",',
+                    '  "checkOut": "2026-07-13"',
+                    "}"
+                ],
+                responseStatus: "201 Created",
+                response: [
+                    "{",
+                    '  "message": "Booking created successfully"',
+                    "}"
+                ]
+            },
+            {
+                title: "Room Unavailable",
+                request: [
+                    "POST /api/bookings"
+                ],
+                responseStatus: "409 Conflict",
+                response: [
+                    "{",
+                    '  "error": "Room unavailable"',
+                    "}"
+                ]
+            },
+            {
+                title: "Access Denied",
+                request: [
+                    "DELETE /api/bookings/15"
+                ],
+                responseStatus: "403 Forbidden",
+                response: [
+                    "{",
+                    '  "error": "Access denied"',
+                    "}"
+                ]
+            },
+            {
+                title: "Late Cancellation",
+                request: [
+                    "PATCH /api/bookings/15/cancel"
+                ],
+                responseStatus: "400 Bad Request",
+                response: [
+                    "{",
+                    '  "error": "Cannot cancel within 24 hours"',
+                    "}"
+                ]
+            }
+        ]
     },
 ];

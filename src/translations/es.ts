@@ -28,7 +28,12 @@ const es = {
         label: "Lo que he construido",
         title: "Proyectos",
         github: "GitHub",
-        androidApk: "APK Android",
+        actions: {
+            apk: "APK Android",
+            demo: "Demo",
+            website: "Sitio Web",
+            docs: "Documentación",
+        },
         items: [
             {
                 id: 1,
@@ -44,7 +49,7 @@ const es = {
                 statusLabel: "Completado",
                 title: "Lost & Found UABCS",
                 description:
-                "Aplicación móvil académica para reportar y recuperar objetos perdidos dentro de la comunidad universitaria. Desarrollada con Kotlin y Jetpack Compose, integrando una API REST en Laravel y almacenamiento de imágenes en AWS S3 mediante Retrofit. Lideré el análisis de requisitos, el diseño de base de datos y la documentación técnica.",
+                "Aplicación móvil académica para reportar y recuperar objetos perdidos dentro de la comunidad universitaria. Originalmente integraba una API REST en Laravel y almacenamiento en AWS S3 mediante Retrofit; posteriormente fue refactorizada con datos simulados configurables para mantener una demostración funcional tras la indisponibilidad del backend.",
             },
             {
                 id: 3,

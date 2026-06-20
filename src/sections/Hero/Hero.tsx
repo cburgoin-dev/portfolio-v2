@@ -1,9 +1,4 @@
-import { 
-    FaGithub,
-    FaLinkedin,
-    FaEnvelope,
-    FaRegFileAlt
-} from "react-icons/fa";
+import{ Icons }from "../../utils/icons"
 
 import './Hero.css';
 import RobotAvatar from '../../components/RobotAvatar/RobotAvatar';
@@ -59,7 +54,7 @@ function Hero() {
                             rel="noopener noreferrer"
                             className="hero-btn-secondary"
                         >
-                            <FaGithub size={16} />
+                            <Icons.github size={16} />
                             GitHub
                         </a>
                     </div>
@@ -71,7 +66,7 @@ function Hero() {
                             rel="noopener noreferrer"
                             className="hero-social-link"
                         >
-                            <FaLinkedin size={14} />
+                            <Icons.linkedin size={14} />
                             {tr.hero.social.linkedin}
                         </a>
 
@@ -81,7 +76,7 @@ function Hero() {
                             href="mailto:cristian.burgoin.dev@gmail.com"
                             className="hero-social-link"
                         >
-                            <FaEnvelope size={14} />
+                            <Icons.email size={14} />
                             {tr.hero.social.email}
                         </a>
 
@@ -93,7 +88,7 @@ function Hero() {
                             rel="noopener noreferrer"
                             className="hero-social-link"
                         >
-                            <FaRegFileAlt size={14} />
+                            <Icons.resume size={14} />
                             {tr.hero.social.resume}
                         </a>
                     </div>

@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { Icons } from "../../utils/icons";
 
 import "./Footer.css";
 
@@ -24,7 +24,7 @@ function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaGithub />
+                        <Icons.github />
                     </a>
 
                     <a
@@ -32,7 +32,7 @@ function Footer() {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <FaLinkedin />
+                        <Icons.linkedin />
                     </a>
                 </div>
 
