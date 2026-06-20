@@ -65,7 +65,8 @@ Technologies:
 - TypeScript
 - Vite
 - CSS
-- i18next
+- React Context API
+- Local Storage
 - GitHub Pages
 
 ---
