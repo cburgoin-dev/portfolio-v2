@@ -9,6 +9,7 @@ Built with React, TypeScript, and Vite, the portfolio includes multilingual supp
 ## Features
 
 - English and Spanish localization
+- Type-safe custom translation system
 - Dark and light themes
 - Persistent user preferences
 - Interactive project showcase
