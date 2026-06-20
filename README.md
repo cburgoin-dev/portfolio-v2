@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# Portfolio v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio showcasing software engineering projects focused on mobile development, backend systems, and applied artificial intelligence.
 
-Currently, two official plugins are available:
+Built with React, TypeScript, and Vite, the portfolio includes multilingual support, dark/light themes, downloadable resumes, and interactive project presentations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- English and Spanish localization
+- Dark and light themes
+- Persistent user preferences
+- Interactive project showcase
+- Mobile application previews
+- Backend API visualizations
+- APK download integration
+- GitHub repository integration
+- Responsive design
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Featured Projects
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🌊 Turismo La Paz
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Mobile application designed to promote tourism in La Paz through geolocation and recommendations.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Technologies:
+
+- React Native
+- Expo
+- TypeScript
+
+---
+
+### 🔍 Lost & Found UABCS
+
+Academic mobile application for reporting and recovering lost objects within the university community.
+
+Technologies:
+
+- Kotlin
+- Jetpack Compose
+- Laravel
+- Retrofit
+
+---
+
+### 🏨 Hotel Reservation API
+
+Backend REST API focused on reservation management and business rule enforcement.
+
+Technologies:
+
+- Java
+- JWT
+- MySQL
+
+---
+
+## Tech Stack
+
+- React
+- TypeScript
+- Vite
+- CSS
+- i18next
+- GitHub Pages
+
+---
+
+## Running Locally
+
+Requirements:
+
+- Node.js 20+
+- npm
+
+Setup:
+
+```bash
+git clone https://github.com/cburgoin-dev/portfolio-v2.git
+
+cd portfolio-v2
+
+npm install
+
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Purpose
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This repository serves as the central hub for presenting my work as a software engineering student and developer.
+
+It showcases projects involving mobile development, backend architecture, and applied AI while emphasizing clean design and accessibility.
