@@ -221,7 +221,7 @@
 
     color: var(--text-secondary);
 
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 
     cursor: pointer;
 
@@ -518,11 +518,11 @@
 }
 
 .proj-status--dev {
-    color: #fbbf24;
+    color: var(--status-dev-color);
 
-    background: rgba(234, 179, 8, 0.1);
+    background: var(--status-dev-bg);
 
-    border: 1px solid rgba(234, 179, 8, 0.2);
+    border: 1px solid var(--status-dev-border);
 }
 
 .proj-status-dot {

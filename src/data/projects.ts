@@ -14,6 +14,13 @@ import lostfound04 from "../assets/projects/lost-found/lost-found-04.jpeg";
 import lostfound05 from "../assets/projects/lost-found/lost-found-05.jpeg";
 import lostfound06 from "../assets/projects/lost-found/lost-found-06.jpeg";
 
+import emotionDocs from "../assets/docs/emotion-analysis.pdf";
+import emotionanalysis01 from "../assets/projects/emotion-analysis/emotion-analysis-01.png"
+import emotionanalysis02 from "../assets/projects/emotion-analysis/emotion-analysis-02.png"
+import emotionanalysis03 from "../assets/projects/emotion-analysis/emotion-analysis-03.png"
+import emotionanalysis04 from "../assets/projects/emotion-analysis/emotion-analysis-04.png"
+import emotionanalysis05 from "../assets/projects/emotion-analysis/emotion-analysis-05.png"
+
 export type ProjectActionType =
     | "apk"
     | "demo"
@@ -199,5 +206,32 @@ export const projects: Project[] = [
                 ]
             }
         ]
+    },
+    {
+        id: 4,
+        status: "dev",
+        previewLayout: "landscape",
+        tags: ["Python", "OpenCV", "DeepFace", "TensorFlow", "Pandas"],
+        github: "https://github.com/cburgoin-dev/emotion-analysis",
+        actions: [
+            {
+                type: "demo",
+                url: "https://youtu.be/rF7Pxkg8UBA",
+                variant: "primary"
+            },
+            {
+                type: "docs",
+                url: emotionDocs,
+                variant: "secondary"
+            }
+        ],
+        images: [
+            emotionanalysis01,
+            emotionanalysis02,
+            emotionanalysis03,
+            emotionanalysis04,
+            emotionanalysis05,
+        ],
+        icon: "😊",
     },
 ];

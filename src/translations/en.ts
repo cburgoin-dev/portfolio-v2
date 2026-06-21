@@ -29,10 +29,10 @@ const en = {
         title: "Projects",
         github: "GitHub",
         actions: {
-            apk: "Android APK",
-            demo: "Live Demo",
+            apk: "APK",
+            demo: "Demo",
             website: "Website",
-            docs: "Documentation",
+            docs: "Docs",
         },
         items: [
             {
@@ -53,11 +53,19 @@ const en = {
             },
             {
                 id: 3,
-                name: "Reservation System",
+                name: "Hotel Reservations",
                 statusLabel: "Completed",
                 title: "Hotel Reservation System",
                 description:
                 "Backend system for managing hotel bookings, clients, rooms, and availability. Built with Java and MySQL using a Controller–Service–DAO architecture. Includes JWT authentication, booking validation, room availability checks, and RESTful endpoints.",
+            },
+            {
+                id: 4,
+                name: "Emotion Analysis",
+                statusLabel: "In development",
+                title: "Real-Time Emotion Analysis",
+                description:
+                "Desktop application for real-time facial emotion recognition using DeepFace and OpenCV. Includes multiple facial detectors, live performance metrics, Excel export functionality, and a comparative evaluation of detector accuracy and responsiveness across different hardware configurations.",
             },
         ],
     },
@@ -102,7 +110,7 @@ const en = {
             languages: "Languages",
             frameworks: "Frameworks & Platforms",
             databases: "Databases",
-            ai: "Applied AI",
+            ai: "Applied IA",
             tools: "Tools & Practices",
         },
         levels: {

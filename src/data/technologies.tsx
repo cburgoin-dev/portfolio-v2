@@ -18,18 +18,23 @@ import MongoDBLogo from "../assets/skills/mongodb-original.svg";
 
 import GitLogo from "../assets/skills/git.svg";
 import PostmanLogo from "../assets/skills/postman.svg";
+import LinuxLogo from "../assets/skills/linux.svg";
+
 import TensorFlowLogo from "../assets/skills/tensorflow.svg";
 import KerasLogo from "../assets/skills/keras.svg";
 import OpenCVLogo from "../assets/skills/opencv.svg";
-import LinuxLogo from "../assets/skills/linux.svg";
+import PandasLogo from "../assets/skills/pandas.svg";
 
 import LaravelLogo from "../assets/skills/laravel.svg";
 import AWSLogo from "../assets/skills/aws.svg";
 
 import { FaGithub } from "react-icons/fa";
+
 import { TbBraces } from "react-icons/tb";
 import { TbKey } from "react-icons/tb";
 import { TbArrowsExchange } from "react-icons/tb";
+import { TbMoodSmile } from "react-icons/tb";
+
 import { MdLocationOn } from "react-icons/md";
 
 export type Technology = {
@@ -154,6 +159,16 @@ export const technologies = {
     OpenCV: {
         name: "OpenCV",
         icon: <SkillImage src={OpenCVLogo} alt="OpenCV" />,
+    },
+
+    DeepFace: {
+        name: "DeepFace",
+        icon: <TbMoodSmile size={22} color="var(--icon-deepface)" />
+    },
+
+    Pandas: {
+        name: "Pandas",
+        icon: <SkillImage src={PandasLogo} alt="Pandas" />
     },
 
     Linux: {

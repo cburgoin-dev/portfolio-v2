@@ -29,11 +29,11 @@ function Projects() {
 
     const actionConfig = {
         apk: {
-            icon: Icons.apk,
+            icon: (props) => <Icons.apk {...props} size={14} />,
             label: tr.projects.actions.apk,
         },
         demo: {
-            icon: Icons.demo,
+            icon: (props) => <Icons.demo {...props} size={12} />,
             label: tr.projects.actions.demo,
         },
         website: {
@@ -41,7 +41,7 @@ function Projects() {
             label: tr.projects.actions.website,
         },
         docs: {
-            icon: Icons.docs,
+            icon: (props) => <Icons.docs {...props} size={12} />,
             label: tr.projects.actions.docs,
         },
     } as const;
@@ -317,7 +317,7 @@ function Projects() {
 
                                     return (
                                         <a
-                                            key={action.url}
+                                            key={`${active.id}-${action.type}`}
                                             href={action.url}
                                             target={openInNewTab ? "_blank" : undefined}
                                             rel={openInNewTab ? "noopener noreferrer" : undefined}

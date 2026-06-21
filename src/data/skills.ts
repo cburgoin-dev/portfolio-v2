@@ -46,9 +46,9 @@ export const skillCategories: Category[] = [
     {
         id: "ai",
         skills: [
+            { technology: "OpenCV", level: "Intermediate"},
             { technology: "TensorFlow", level: "Intermediate"},
             { technology: "Keras", level: "Intermediate"},
-            { technology: "OpenCV", level: "Intermediate"},
         ],
     },
     {
