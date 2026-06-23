@@ -67,6 +67,14 @@ const en = {
                 description:
                 "Desktop application for real-time facial emotion recognition using DeepFace and OpenCV. Includes multiple facial detectors, live performance metrics, Excel export functionality, and a comparative evaluation of detector accuracy and responsiveness across different hardware configurations.",
             },
+            {
+                id: 5,
+                name: "Fruit Detection",
+                statusLabel: "Completed",
+                title: "Real-Time Fruit Detection",
+                description:
+                "Desktop application for real-time fruit classification using TensorFlow and OpenCV. Combines camera recognition with serial weight sensors to automate price calculation and shopping cart generation. Includes a complete demo mode that replicates the experience without external hardware.",
+            },
         ],
     },
 

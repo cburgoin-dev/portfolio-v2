@@ -4,13 +4,13 @@
 }
 
 .hero-container {
-    min-height: calc(100vh - var(--navbar-height));
+    min-height: calc(100svh - var(--navbar-height));
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 6rem;
+    gap: clamp(3rem, 6vw, 6rem);
 }
 
 /* Grid background */
@@ -157,25 +157,12 @@
     transition: background .2s, transform .2s, box-shadow .2s;
 }
 
-.hero-btn-primary:hover {
-    background: var(--btn-primary-hover);
-    transform: translateY(-1px);
-}
-
 .hero-btn-secondary {
     border: 1px solid var(--btn-secondary-border);
 
     color: var(--text-secondary);
 
     font-size: .9rem;
-}
-
-.hero-btn-secondary:hover {
-    color: var(--text-primary);
-
-    border-color: var(--btn-secondary-border-hover);
-
-    transform: translateY(-1px);
 }
 
 .hero-social {
@@ -198,10 +185,6 @@
     opacity: .6;
 
     transition: .2s;
-}
-
-.hero-social-link:hover {
-    opacity: 1;
 }
 
 .hero-social-dot {
@@ -272,5 +255,229 @@
 
     50% {
         opacity: .4;
+    }
+}
+
+/* Hover */
+
+@media (hover: hover) {
+
+    .hero-btn-primary:hover {
+        background: var(--btn-primary-hover);
+        
+        transform: translateY(-1px);
+    }
+
+    .hero-btn-secondary:hover {
+        color: var(--text-primary);
+
+        border-color: var(--btn-secondary-border-hover);
+
+        transform: translateY(-1px);
+    }
+
+    .hero-social-link:hover {
+        opacity: 1;
+    }
+
+}
+
+@media (hover: none) {
+
+    .hero-btn-primary:active {
+        transform: scale(.98);
+    }
+
+    .hero-btn-secondary:active {
+        transform: scale(.98);
+    }
+
+    .hero-social-link:active {
+        opacity: 1;
+    }
+
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding-top: var(--navbar-height);
+    }
+
+    .hero-container {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 2rem;
+
+        text-align: center;
+    }
+
+    .hero-left {
+        align-items: center;
+        max-width: 650px;
+    }
+
+    .hero-description {
+        max-width: 500px;
+    }
+
+    .hero-chips {
+        justify-content: center;
+    }
+
+    .hero-social {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .robot-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+
+    .robot-ring--outer {
+        width: 320px;
+        height: 320px;
+    }
+
+    .robot-ring--mid {
+        width: 260px;
+        height: 260px;
+    }
+
+    .robot-body {
+        width: 150px;
+    }
+
+    .hero-status-tag {
+        right: -10px;
+        bottom: 15px;
+
+        transform: scale(.9);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero-container {
+        gap: 1.5rem;
+    }
+
+    .hero-name {
+        font-size: clamp(2.8rem, 6vw, 3.8rem);
+    }
+
+    .hero-description {
+        max-width: 450px;
+    }
+
+    .robot-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+
+    .robot-ring--outer {
+        width: 280px;
+        height: 280px;
+    }
+
+    .robot-ring--mid {
+        width: 220px;
+        height: 220px;
+    }
+
+    .robot-body {
+        width: 135px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding-top: calc(var(--navbar-height) + 2rem);
+    }
+
+    .hero-name {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+
+        align-items: center;
+    }
+
+    .hero-btn-primary,
+    .hero-btn-secondary {
+        width: 100%;
+        max-width: 260px;
+
+        justify-content: center;
+    }
+
+    .hero-social {
+        gap: .5rem;
+    }
+
+    .hero-social-link {
+        font-size: .8rem;
+    }
+
+    .hero-status-tag {
+        left: 50%;
+        right: auto;
+
+        transform:
+            translateX(-50%)
+            scale(.9);
+
+        bottom: -10px;
+    }
+
+    .robot-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+
+    .robot-ring--outer {
+        width: 200px;
+        height: 200px;
+    }
+
+    .robot-ring--mid {
+        width: 160px;
+        height: 160px;
+    }
+
+    .robot-body {
+        width: 115px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .robot-wrapper {
+        width: 160px;
+        height: 160px;
+    }
+
+    .robot-ring--outer {
+        width: 180px;
+        height: 180px;
+    }
+
+    .robot-ring--mid {
+        width: 140px;
+        height: 140px;
+    }
+
+    .robot-body {
+        width: 100px;
     }
 }

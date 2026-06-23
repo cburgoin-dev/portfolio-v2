@@ -21,6 +21,12 @@ import emotionanalysis03 from "../assets/projects/emotion-analysis/emotion-analy
 import emotionanalysis04 from "../assets/projects/emotion-analysis/emotion-analysis-04.png"
 import emotionanalysis05 from "../assets/projects/emotion-analysis/emotion-analysis-05.png"
 
+import fruitdetection01 from "../assets/projects/fruit-detection/fruit-detection-01.png"
+import fruitdetection02 from "../assets/projects/fruit-detection/fruit-detection-02.png"
+import fruitdetection03 from "../assets/projects/fruit-detection/fruit-detection-03.png"
+import fruitdetection04 from "../assets/projects/fruit-detection/fruit-detection-04.png"
+import fruitdetection05 from "../assets/projects/fruit-detection/fruit-detection-05.png"
+
 export type ProjectActionType =
     | "apk"
     | "demo"
@@ -233,5 +239,27 @@ export const projects: Project[] = [
             emotionanalysis05,
         ],
         icon: "😊",
+    },
+    {
+        id: 5,
+        status: "live",
+        previewLayout: "landscape",
+        tags: ["Python", "OpenCV", "TensorFlow", "Keras", "Serial"],
+        github: "https://github.com/cburgoin-dev/fruit-detection",
+        actions: [
+            {
+                type: "demo",
+                url: "https://youtu.be/2lSyAGUcsdM",
+                variant: "primary"
+            },
+        ],
+        images: [
+            fruitdetection01,
+            fruitdetection02,
+            fruitdetection03,
+            fruitdetection04,
+            fruitdetection05,
+        ],
+        icon: "🍎",
     },
 ];

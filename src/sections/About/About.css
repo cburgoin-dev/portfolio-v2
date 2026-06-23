@@ -56,3 +56,10 @@
 
     font-size: .8rem;
 }
+
+@media (max-width: 375px) {
+
+    .about-text p {
+        line-height: 1.8;
+    }
+}

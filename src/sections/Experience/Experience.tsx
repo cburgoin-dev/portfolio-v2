@@ -42,12 +42,20 @@ function Experience() {
                                             {tr.experience.items[idx].role}
                                         </span>
                                     </h3>
-                                    <span className={`experience-badge experience-badge--${item.badgeType}`}>
+                                    <span className={`experience-badge experience-badge--${item.badgeType} experience-badge-desktop`}>
                                         {tr.experience.items[idx].badge}
                                     </span>
                                 </div>
 
-                                <p className="experience-date">{tr.experience.items[idx].date}</p>
+                                <div className="experience-meta">
+                                    <p className="experience-date">
+                                        {tr.experience.items[idx].date}
+                                    </p>
+
+                                    <span className={`experience-badge experience-badge--${item.badgeType} experience-badge-mobile`}>
+                                        {tr.experience.items[idx].badge}
+                                    </span>
+                                </div>
 
                                 <ul className="experience-bullets">
                                     {tr.experience.items[idx].bullets.map((bullet, i) => (

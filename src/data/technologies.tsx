@@ -34,6 +34,8 @@ import { TbBraces } from "react-icons/tb";
 import { TbKey } from "react-icons/tb";
 import { TbArrowsExchange } from "react-icons/tb";
 import { TbMoodSmile } from "react-icons/tb";
+import { TbWindow } from "react-icons/tb";
+import { TbPlugConnected } from "react-icons/tb";
 
 import { MdLocationOn } from "react-icons/md";
 
@@ -171,6 +173,11 @@ export const technologies = {
         icon: <SkillImage src={PandasLogo} alt="Pandas" />
     },
 
+    Tkinter: {
+        name: "Tkinter",
+        icon: <TbWindow size={22} color="var(--icon-desktop)" />,
+    },
+
     Linux: {
         name: "Linux",
         icon: <SkillImage src={LinuxLogo} alt="Linux" />,
@@ -203,6 +210,15 @@ export const technologies = {
             es: "Geolocalización",
         },
         icon: <MdLocationOn size={22} color="var(--icon-location)" />,
+    },
+
+    Serial: {
+        name: "Serial",
+        labels: {
+            en: "Serial",
+            es: "Serial",
+        },
+        icon: <TbPlugConnected size={22} color="var(--icon-serial)" />,
     }
 
 } as const;

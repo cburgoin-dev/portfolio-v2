@@ -24,10 +24,6 @@
     z-index: -1;
 }
 
-.robot-wrapper:hover {
-    filter: brightness(1.05);
-}
-
 .robot-ring {
     position: absolute;
 
@@ -63,8 +59,16 @@
     transition: filter .2s;
 }
 
-.robot-wrapper:hover .robot-body {
-    filter: brightness(1.08);
+@media (hover: hover) {
+
+    .robot-wrapper:hover {
+        filter: brightness(1.05);
+    }
+
+    .robot-wrapper:hover .robot-body {
+        filter: brightness(1.08);
+    }
+
 }
 
 .robot-svg {

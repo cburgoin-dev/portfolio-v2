@@ -30,7 +30,39 @@
     transition: color .2s, transform .2s;
 }
 
-.footer-socials a:hover {
-    color: var(--text-primary);
-    transform: translateY(-2px);
+/* Hover */
+
+@media (hover: hover) {
+
+    .footer-socials a:hover {
+        color: var(--text-primary);
+        transform: translateY(-2px);
+    }
+
+}
+
+@media (hover: none) {
+
+    .footer-socials a:active {
+        color: var(--text-primary);
+    }
+
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+
+    .footer-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-bottom {
+        text-align: center;
+
+        font-size: .8rem;
+        line-height: 1.5;
+    }
+
 }

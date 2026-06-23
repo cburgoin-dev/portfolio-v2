@@ -67,6 +67,14 @@ const es = {
                 description:
                 "Aplicación de escritorio para reconocimiento de emociones faciales con DeepFace y OpenCV. Incluye múltiples detectores, métricas de rendimiento en vivo, exportación a Excel y evaluación comparativa entre configuraciones de hardware.",
             },
+            {
+                id: 5,
+                name: "Detección de Frutas",
+                statusLabel: "Completado",
+                title: "Clasificación de Frutas",
+                description:
+                "Aplicación de escritorio para clasificar frutas en tiempo real con TensorFlow y OpenCV. Integra reconocimiento por cámara y sensores de peso mediante comunicación serial para automatizar precios y carritos de compra. Incluye un modo demostrativo sin requerir hardware externo.",
+            },
         ],
     },
 

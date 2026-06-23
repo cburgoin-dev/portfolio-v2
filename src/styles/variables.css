@@ -92,6 +92,7 @@
     --icon-retrofit: #a78bfa;
     --icon-location: #ef4444;
     --icon-deepface: #ec4899;
+    --icon-serial: #14b8a6;
 
     /* Layout (theme independent */
     --container-width: 1200px;
@@ -199,4 +200,5 @@
     --icon-retrofit: #7c3aed;
     --icon-location: #dc2626;
     --icon-deepface: #db2777;
+    --icon-serial: #0f766e;
 }

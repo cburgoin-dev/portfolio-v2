@@ -3,8 +3,6 @@
 .projects {
     position: relative;
 
-    min-height: 100vh;
-
     padding-top: var(--section-padding-top);
     padding-bottom: var(--section-padding-bottom);
 
@@ -59,10 +57,6 @@
     border-color: var(--sidebar-item-active-border);
 }
 
-.proj-item:not(.active):hover {
-    background: var(--sidebar-item-hover-bg);
-}
-
 .proj-item-dot {
     width: 6px;
     height: 6px;
@@ -86,15 +80,13 @@
     font-size: 0.88rem;
     font-weight: 500;
 
+    white-space: nowrap;
+
     transition: color 0.15s;
 }
 
 .proj-item.active .proj-item-name {
     color: var(--text-primary);
-}
-
-.proj-item:not(.active):hover .proj-item-name {
-    color: var(--text-secondary);
 }
 
 /* Detail panel — two columns: media | body */
@@ -104,7 +96,7 @@
 
     width: 100%;
 
-    overflow: hidden;
+    overflow: visible;
 
     border: 1px solid var(--card-border);
     border-radius: 14px;
@@ -228,10 +220,6 @@
     padding: 0.5rem;
 
     transition: color 0.15s;
-}
-
-.proj-arrow:hover {
-    color: var(--text-primary);
 }
 
 .proj-arrow--prev {
@@ -603,6 +591,7 @@
 
 .proj-actions {
     display: flex;
+    flex-wrap: wrap;
 
     gap: 8px;
 
@@ -627,20 +616,12 @@
     transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
 }
 
-.proj-btn:hover {
-    transform: translateY(-1px);
-}
-
 .proj-btn--primary {
     color: white;
 
     background: var(--accent-dark);
 
     border: 1px solid transparent;
-}
-
-.proj-btn--primary:hover {
-    background: #1d4ed8;
 }
 
 .proj-btn--secondary {
@@ -651,27 +632,67 @@
     border: 1px solid var(--proj-btn-border);
 }
 
-.proj-btn--secondary:hover {
-    color: var(--text-primary);
+/* Hover */
 
-    border-color: var(--proj-btn-border-hover);
+@media (hover: hover) {
+
+    .proj-item:not(.active):hover {
+        background: var(--sidebar-item-hover-bg);
+    }
+
+    .proj-item:not(.active):hover .proj-item-name {
+        color: var(--text-secondary);
+    }
+
+    .proj-arrow:hover {
+        color: var(--text-primary);
+    }
+
+    .proj-btn:hover {
+        transform: translateY(-1px);
+    }
+
+    .proj-btn--primary:hover {
+        background: #1d4ed8;
+    }
+
+    .proj-btn--secondary:hover {
+        color: var(--text-primary);
+        border-color: var(--proj-btn-border-hover);
+    }
+}
+
+@media (hover: none) {
+
+    .proj-btn:active {
+        transform: scale(.98);
+    }
+
+    .proj-arrow:active {
+        color: var(--text-primary);
+    }
+
 }
 
 /* Responsive */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+
     .projects-layout {
         grid-template-columns: 1fr;
     }
 
     .projects-sidebar {
-        position: static;
-
         flex-direction: row;
+        flex-wrap: wrap;
 
-        overflow-x: auto;
+        overflow: visible;
 
         scrollbar-width: none;
+
+        padding-bottom: 4px;
+
+        gap: .5rem;
     }
 
     .projects-sidebar::-webkit-scrollbar {
@@ -679,18 +700,76 @@
     }
 
     .proj-item {
+        width: auto;
+
+        padding: .7rem 1rem;
+
+        border-radius: 999px;
+
+        border: 1px solid var(--card-border);
+
         flex-shrink: 0;
     }
 
+    .proj-media--phone {
+        width: clamp(320px, 35vw, 380px);
+    }
+
+    .proj-media--landscape,
+    .proj-media--api,
+    .proj-media--diagram {
+        width: clamp(340px, 42vw, 420px);
+    }
+}
+
+@media (max-width: 768px) {
+
     .proj-detail {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .proj-media {
+        width: 100% !important;
+
         min-height: 320px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--proj-media-border);
+    }
+
+    .proj-body {
+        padding: 1.5rem;
     }
 
     .proj-media-img {
-        max-height: 280px;
+        max-height: 320px;
+    }
+
+    .proj-api {
+        height: 300px;
+        padding: 0.85rem;
+    }
+
+    .proj-api-overview-title {
+        font-size: 1.2rem;
+    }
+
+    .proj-api-overview {
+        font-size: 0.85rem;
+        gap: 0.75rem;
+    }
+
+    .proj-api-code {
+        font-size: 0.72rem;
+    }
+
+    .proj-api-label,
+    .proj-api-status {
+        font-size: 0.72rem;
+    }
+
+    .proj-http {
+        font-size: 0.65rem;
     }
 }
