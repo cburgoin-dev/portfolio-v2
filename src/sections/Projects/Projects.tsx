@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import type { IconType } from "react-icons";
+
 import "./Projects.css";
 
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
@@ -27,24 +29,30 @@ function Projects() {
             ? active.apiExamples?.length ?? 0
             : active.images.length;
 
-    const actionConfig = {
-        apk: {
-            icon: (props) => <Icons.apk {...props} size={14} />,
-            label: tr.projects.actions.apk,
-        },
-        demo: {
-            icon: (props) => <Icons.demo {...props} size={12} />,
-            label: tr.projects.actions.demo,
-        },
-        website: {
-            icon: Icons.website,
-            label: tr.projects.actions.website,
-        },
-        docs: {
-            icon: (props) => <Icons.docs {...props} size={12} />,
-            label: tr.projects.actions.docs,
-        },
-    } as const;
+    const actionConfig: Record<
+    string,
+    {
+        icon: IconType;
+        label: string;
+    }
+> = {
+    apk: {
+        icon: Icons.apk,
+        label: tr.projects.actions.apk,
+    },
+    demo: {
+        icon: Icons.demo,
+        label: tr.projects.actions.demo,
+    },
+    website: {
+        icon: Icons.website,
+        label: tr.projects.actions.website,
+    },
+    docs: {
+        icon: Icons.docs,
+        label: tr.projects.actions.docs,
+    },
+};
 
     const shouldOpenExternally = {
         apk: false,

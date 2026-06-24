@@ -9,8 +9,15 @@ export type Skill = {
     level: Level;
 };
 
+export type CategoryId =
+    | "languages"
+    | "frameworks"
+    | "databases"
+    | "ai"
+    | "tools";
+
 export type Category = {
-    id: string;
+    id: CategoryId;
     skills: Skill[];
 };
 
