@@ -2,7 +2,7 @@
 
 Personal portfolio showcasing software engineering projects focused on mobile development, backend systems, and applied artificial intelligence.
 
-Built with React, TypeScript, and Vite, the portfolio serves as the central hub for presenting academic, personal, and research projects, including mobile applications, backend APIs, and AI-related work.
+Built with React, TypeScript, and Vite, the portfolio serves as the central hub for showcasing software engineering projects across mobile development, backend systems, and applied artificial intelligence.
 
 🌐 Live Website
 
