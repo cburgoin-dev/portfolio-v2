@@ -102,7 +102,7 @@ const en = {
                 badge: "Education",
                 date: "Aug 2023 — Present",
                 bullets: [
-                    "Training in software architecture, data structures, an relational database design",
+                    "Training in software architecture, data structures, and relational database design",
                     "Built academic and collaborative projects applying engineering practices and requirements analysis",
                     "Focused on backend development, REST APIs, and mobile application development",
                     "Recognized with academic excellence distinctions throughout the degree"
@@ -118,7 +118,7 @@ const en = {
             languages: "Languages",
             frameworks: "Frameworks & Platforms",
             databases: "Databases",
-            ai: "Applied IA",
+            ai: "Applied AI",
             tools: "Tools & Practices",
         },
         levels: {
